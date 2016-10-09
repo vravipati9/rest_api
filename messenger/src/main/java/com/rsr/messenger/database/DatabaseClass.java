@@ -16,6 +16,7 @@ public class DatabaseClass {
 		return messages;
 	}
 	
+	
 	public static Map<String, Profile> getProfiles() {
 		return profiles;
 	}
