@@ -23,7 +23,7 @@ import com.rsr.messenger.service.MessageService;
 
 @Path("/messages")
 @Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+@Produces(value={MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 public class MessageResource {
 
 	MessageService messageService = new MessageService();
@@ -74,7 +74,6 @@ public class MessageResource {
 		message.addLink(getUriForComments(uriInfo, message), "comments");
 		
 		return message;
-		
 	}
 
 	private String getUriForComments(UriInfo uriInfo, Message message) {
@@ -83,6 +82,7 @@ public class MessageResource {
 	       		.path(MessageResource.class, "getCommentResource")
 	       		.path(CommentResource.class)
 	       		.resolveTemplate("messageId", message.getId())
+	       		//resolveTemple is used to replace {messageId} to parameter value
 	            .build();
 	    return uri.toString();
 	}
@@ -103,9 +103,6 @@ public class MessageResource {
 		 .toString();
 		return uri;
 	}
-	
-	
-	
 	
 	@Path("/{messageId}/comments")
 	public CommentResource getCommentResource() {

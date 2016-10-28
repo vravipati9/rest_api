@@ -17,5 +17,4 @@ public class DataNotFoundExceptionMapper implements ExceptionMapper<DataNotFound
 				.entity(errorMessage)
 				.build();
 	}
-
 }

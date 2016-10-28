@@ -66,9 +66,4 @@ public class MessageService {
 	public Message removeMessage(long id) {
 		return messages.remove(id);
 	}
-	
-
-	
-	
-	
 }

@@ -10,7 +10,7 @@ public class ErrorMessage {
 	private String documentation;
 	
 	public ErrorMessage() {
-		
+		//To serialize and de-serialize
 	}
 		
 	public ErrorMessage(String errorMessage, int errorCode, String documentation) {

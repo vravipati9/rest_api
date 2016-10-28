@@ -36,7 +36,9 @@ public class CommentService {
 		Map<Long, Comment> comments = messages.get(messageId).getComments();
 		Comment comment = comments.get(commentId);
 		if (comment == null) {
-			throw new NotFoundException(response);
+			throw new NotFoundException(response); 
+			// NotFoundException is a subclass of ClientErrorException 
+			//which interns a subclass of WebApplicationException
 		}
 		return comment;
 	}

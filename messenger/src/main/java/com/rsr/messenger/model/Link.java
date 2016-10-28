@@ -16,6 +16,4 @@ public class Link {
 	public void setRel(String rel) {
 		this.rel = rel;
 	}
-	
-	
 }
